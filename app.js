@@ -22,12 +22,6 @@ app.use(express.static(path.join(__dirname, "public")))
 
 
 
-app.get("/trip", async (req, res)=>{
-    const trip = await Trip.find({})
-
-    res.json(trip);
-})
-
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));

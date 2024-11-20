@@ -440,11 +440,7 @@
                 },
             ];
 
-<<<<<<< HEAD
-            fetch(`http://localhost:8001/price/trip/${tripId}`)
-=======
             fetch(`http://145.223.21.202:8001/price/trip/${tripId}`)
->>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
                 .then((res) => res.json())
                 .then((res) => {
                     carOptions[0].price = res.price.pricing.HATCHBACK,
@@ -484,11 +480,7 @@
                         </ul>
                     </div>
                     <div>
-<<<<<<< HEAD
                         <p class="price">Rs ${car.price}</p>
-=======
-                        <p class="price">${car.price}</p>
->>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
                         <button class="select-button" > Book Now </button>
                     </div>
                 `;
@@ -497,11 +489,7 @@
                         carDiv.querySelector('.select-button').addEventListener('click', () => {
                             tripId2 = localStorage.getItem("trip");
                             selectCar = car;
-<<<<<<< HEAD
-                            fetch(`http://localhost:8001/trip/vehicle/${tripId2}`, {
-=======
                             fetch(`http://145.223.21.202:8001/trip/vehicle/${tripId2}`, {
->>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
                                 method: "PATCH",
                                 headers: {
                                     "Content-Type": "application/json"  // Set the header to application/json

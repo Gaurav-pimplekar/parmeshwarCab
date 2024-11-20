@@ -246,7 +246,7 @@
                     // Log form data to the console
                     console.log("Form Data:", formData);
 
-                    fetch("http://localhost:8001/trip/create", {
+                    fetch("http://145.223.21.202:8001/trip/create", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"  // Set the header to application/json
@@ -440,7 +440,7 @@
                 },
             ];
 
-            fetch(`http://localhost:8001/price/trip/${tripId}`)
+            fetch(`http://145.223.21.202:8001/price/trip/${tripId}`)
                 .then((res) => res.json())
                 .then((res) => {
                     carOptions[0].price = res.price.pricing.HATCHBACK,
@@ -489,7 +489,7 @@
                         carDiv.querySelector('.select-button').addEventListener('click', () => {
                             tripId2 = localStorage.getItem("trip");
                             selectCar = car;
-                            fetch(`http://localhost:8001/trip/vehicle/${tripId2}`, {
+                            fetch(`http://145.223.21.202:8001/trip/vehicle/${tripId2}`, {
                                 method: "PATCH",
                                 headers: {
                                     "Content-Type": "application/json"  // Set the header to application/json

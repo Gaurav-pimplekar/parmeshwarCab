@@ -182,8 +182,13 @@ position: relative; /* Needed for positioning child elements */
 
 .fixed-booking-form {
     position: absolute;  
+<<<<<<< HEAD
     top: 30px; 
     left: 90%;
+=======
+    top: 130px; 
+    left: 78%;
+>>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
     height: auto; /* Allow height to adjust automatically */
     transform: translateX(-50%); 
     background-color: transparent;
@@ -192,7 +197,10 @@ position: relative; /* Needed for positioning child elements */
     z-index: 10;  
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     box-sizing: border-box; /* Include padding in width/height calculation */
+<<<<<<< HEAD
     margin-left: 400px;
+=======
+>>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
 }
 
 /* Media Query for Tablets and Smaller Devices */
@@ -479,7 +487,11 @@ left: 100%;
     bottom: 20px; /* Adjust the vertical position as needed */
     right: 20px; /* Adjust the horizontal position as needed */
     display: inline-block;
+<<<<<<< HEAD
     background-color: green;
+=======
+    background-color: black;
+>>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
@@ -490,6 +502,11 @@ left: 100%;
     margin-right: 5px;
 }
 .call-button:hover {
+<<<<<<< HEAD
     background-color: rgb(61, 59, 59);
     color: white;
+=======
+    background-color: green;
+    color: black;
+>>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
 }

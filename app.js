@@ -22,12 +22,15 @@ app.use(express.static(path.join(__dirname, "public")))
 
 
 
+<<<<<<< HEAD
 app.get("/trip", async (req, res)=>{
     const trip = await Trip.find({})
 
     res.json(trip);
 })
 
+=======
+>>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));

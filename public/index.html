@@ -140,129 +140,7 @@
             <!-- SLIDER  END-->
         </div>
     </div>
-    <div class="fixed-booking-form">
-        <div class="text-center rounded p-5 inner-div">
-            <h1 class="mb-4" style="color: white;">Book Cab Here</h1>
-            <div class="choostrip">
-                <select class="form-select bg-light border-0" id="tripType" name="tripType">
-                    <option selected>Choose Trip-Type</option>
-                    <option value="One-Way">One-Way Tours</option>
-                    <option value="Round">Round Tours</option>
-                    <option value="Rental">Rental</option>
-                </select>
-            </div>
-
-            <form id="cabForm">
-                <div class="row g-3">
-                    <div class="col-12 col-sm-6">
-                        <select class="form-select bg-light border-0" style="height: 55px;" id="cabType" name="cabType">
-                            <option selected>Select Route</option>
-                            <option value="pune to mumbai">pune to mumbai</option>
-                            <option value="pune to thane">pune to thane</option>
-                            <option value="pune to panvel">pune to panvel</option>
-                            <option value="mumbai to pune">mumbai to pune</option>
-                            <option value="thane to pune">thane to pune</option>
-                            <option value="panvel to pune">panvel to pune</option>
-                            <option value="pune to kolhapur">pune to kolhapur</option>
-                            <option value="pune to sangli">pune to sangli</option>
-                            <option value="pune to miraj">pune to miraj</option>
-                            <option value="pune to ichalkaranji">pune to ichalkaranji</option>
-                            <option value="kolhapur to pune">kolhapur to pune</option>
-                            <option value="sangli to pune">sangli to pune</option>
-                            <option value="miraj to pune">miraj to pune</option>
-                            <option value="ichalkaranji to pune">ichalkaranji to pune</option>
-                            <option value="mumbai to kolhapur">mumbai to kolhapur</option>
-                            <option value="mumbai to sangli">mumbai to sangli</option>
-                            <option value="mumbai to miraj">mumbai to miraj</option>
-                            <option value="mumbai to ichalkaranji">mumbai to ichalkaranji</option>
-                            <option value="thane to kolhapur">thane to kolhapur</option>
-                            <option value="thane to sangli">thane to sangli</option>
-                            <option value="panvel to kolhapur">panvel to kolhapur</option>
-                            <option value="panvel to sangli">panvel to sangli</option>
-                            <option value="panvel to miraj">panvel to miraj</option>
-                            <option value="mumbai to goa">mumbai to goa</option>
-                            <option value="thane to goa">thane to goa</option>
-                            <option value="panvel to goa">panvel to goa</option>
-                            <option value="goa to mumbai">goa to mumbai</option>
-                            <option value="goa to thane">goa to thane</option>
-                            <option value="bhopal to mumbai">bhopal to mumbai</option>
-                            <option value="bhopal to thane">bhopal to thane</option>
-                            <option value="bhopal to panvel">bhopal to panvel</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <select class="form-select bg-light border-0" style="height: 55px;" id="Passengers"
-                            name="Passengers">
-                            <option selected>Select Passengers</option>
-                            <option value="3">1-3</option>
-                            <option value="6">3-6</option>
-                            <option value="8">6-8</option>
-                        </select>
-                    </div>
-
-                    <div class="col-12 col-sm-6">
-                        <label for="date" style="color: white;">Date</label>
-                        <input type="date" id="departureDate" class="form-control bg-light border-0"
-                            style="height: 55px;" name="departureDate">
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <label for="time" style="color: white;">Time</label>
-                        <input type="time" id="departureTime" class="form-control bg-light border-0"
-                            style="height: 55px;" name="departureTime">
-                    </div>
-                    <div class="col-12 col-sm-6" id="returnDateContainer" style="display: none;">
-                        <label for="return_date" style="color: white;">Return Date</label>
-                        <input type="date" id="returnDate1" class="form-control bg-light border-0" style="height: 55px;"
-                            name="returnDate1">
-                    </div>
-                    <div class="col-12 col-sm-6" id="returnTimeContainer" style="display: none;">
-                        <label for="return_tate" style="color: white;">Return Time</label>
-                        <input type="time" id="returnTime" class="form-control bg-light border-0" style="height: 55px;"
-                            name="returnTime">
-                    </div>
-                    <div class="col-12">
-                        <button class="btn book-now-btn w-100 py-3" type="submit"
-                            style="color: white; font-size: 20px; border-radius: 10px;">Book Now</button>
-                    </div>
-                </div>
-            </form>
-
-            <script>
-                // Add event listener to the form's submit button
-                document.getElementById("cabForm").addEventListener("submit", function (event) {
-                    event.preventDefault();  // Prevent form from submitting
-
-                    // Collect form data
-                    const formData = {
-                        tripType: document.getElementById("tripType").value,
-                        route: document.getElementById("cabType").value,
-                        passengers: +document.getElementById("Passengers").value,
-                        date: document.getElementById("departureDate").value,
-                        time: document.getElementById("departureTime").value,
-                        returnDate: document.getElementById("returnDate1") ? document.getElementById("returnDate1").value : null,
-                        returnTime: document.getElementById("returnTime") ? document.getElementById("returnTime").value : null
-                    };
-
-                    // Log form data to the console
-                    console.log("Form Data:", formData);
-
-                    fetch("http://145.223.21.202:8001/trip/create", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"  // Set the header to application/json
-                        },
-                        body: JSON.stringify(formData)
-                    }).then((res) => res.json()).then((res) => {
-                        localStorage.setItem("trip", res.trip?._id);
-                        showCarOptions()
-                    }).catch((err) => console.log(err));
-
-
-                });
-            </script>
-
-        </div>
-    </div>
+    
 
     <div id="carOptionsModal" class="modal">
         <div class="modal-content">
@@ -655,7 +533,7 @@
                         <form id="cabForm">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select dynamic-route bg-light border-0" style="height: 55px;" id="cabType" name="cabType">
+                                    <select class="form-select bg-light border-0" style="height: 55px;" id="cabType" name="cabType">
                                         <option selected>Select Route</option>
                                         <option value="pune to mumbai">pune to mumbai</option>
                                         <option value="pune to thane">pune to thane</option>
@@ -728,10 +606,6 @@
                         </form>
             
                         <script>
-
-                            const data = fetch("http://localhost:8001/getPrices").then(res => res.json()).then(res => res.data);
-                            console.log(data);
-
                             // Add event listener to the form's submit button
                             document.getElementById("cabForm").addEventListener("submit", function (event) {
                                 event.preventDefault();  // Prevent form from submitting
@@ -750,7 +624,7 @@
                                 // Log form data to the console
                                 console.log("Form Data:", formData);
             
-                                fetch("http://localhost:8001/trip/create", {
+                                fetch("http://145.223.21.202:8001/trip/create", {
                                     method: "POST",
                                     headers: {
                                         "Content-Type": "application/json"  // Set the header to application/json
@@ -763,7 +637,6 @@
             
             
                             });
-
                         </script>
             
                     </div>

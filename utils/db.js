@@ -10,7 +10,7 @@ const mongoURI = process.env.MONGO_URL;  // Replace with your MongoDB URI
 // Connect to MongoDB using Mongoose
 const connectDB = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://wtltourism:wtltourism@cluster0.2l8rd.mongodb.net/parmeshwarCab`);
+        await mongoose.connect(mongoURI);
         console.log("MongoDB connected successfully");
     } catch (error) {
         console.error("Error connecting to MongoDB:", error.message);

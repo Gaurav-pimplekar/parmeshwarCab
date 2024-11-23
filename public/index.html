@@ -617,11 +617,7 @@
     <div class="container-fluid  my-5 py-5" id="book" style="background-color: #fff;">
         <div class="container py-5">
             <div class="row gx-5">
-<<<<<<< HEAD
                 <div class="col-lg-6 mb-5 mb-lg-0">
-=======
-                <!-- <div class="col-lg-6 mb-5 mb-lg-0"> -->
->>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
                 <div class="details">
                     <div class="mb-4">
                         <h5 class="d-inline-block text-uppercase border-bottom border-5" style="color:black;">Online Cab
@@ -644,7 +640,6 @@
                             details, and estimated fare.Users can track the driver's location in real-time.</p>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div class="fixed-booking-form" style="background-color:rgb(168, 165, 165);" >
                     <div class="text-center rounded p-5 inner-div">
                         <h1 class="mb-4" style="color: black;">Book Cab Here</h1>
@@ -660,7 +655,7 @@
                         <form id="cabForm">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select bg-light border-0" style="height: 55px;" id="cabType" name="cabType">
+                                    <select class="form-select dynamic-route bg-light border-0" style="height: 55px;" id="cabType" name="cabType">
                                         <option selected>Select Route</option>
                                         <option value="pune to mumbai">pune to mumbai</option>
                                         <option value="pune to thane">pune to thane</option>
@@ -733,6 +728,10 @@
                         </form>
             
                         <script>
+
+                            const data = fetch("http://localhost:8001/getPrices").then(res => res.json()).then(res => res.data);
+                            console.log(data);
+
                             // Add event listener to the form's submit button
                             document.getElementById("cabForm").addEventListener("submit", function (event) {
                                 event.preventDefault();  // Prevent form from submitting
@@ -764,12 +763,11 @@
             
             
                             });
+
                         </script>
             
                     </div>
                 </div>
-=======
->>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976
             </div>
 
             <script>
@@ -1460,8 +1458,4 @@
         <script src="js/app.js"></script>
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 6331559eb2dacf8a7f8a8a41e0f679167c28d976

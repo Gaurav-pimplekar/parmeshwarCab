@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parmeshwar Cab Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="admin-panel-container">
+        <!-- Header Section -->
+        <header>
+            <h1>Parmeshwar Cab Admin</h1>
+        </header>
+
+        <!-- Form for Add Route & Pricing -->
+        <div class="form-container">
+            <h2>Add Route</h2>
+            <form id="route-form" class="form">
+                <div class="form-group">
+                    <label for="route-name">Route Name</label>
+                    <input type="text" id="route-name" name="route-name" placeholder="Enter Route Name" required>
+                </div>
+
+                <h2>Vehicle Pricing</h2>
+
+                <!-- Vehicle and Pricing in Textboxes (Horizontal alignment) -->
+                <div class="form-group vehicle-pricing">
+                    <div class="vehicle">
+                        <label for="hatchback">Hatchback</label>
+                        <input type="text" id="hatchback" name="hatchback" placeholder="Enter Hatchback Pricing" required>
+                    </div>
+                    <br>
+                    <div class="vehicle">
+                        <label for="sedan">Sedan</label>
+                        <input type="text" id="sedan" name="sedan" placeholder="Enter Sedan Pricing" required>
+                    </div>
+                    <div class="vehicle">
+                        <label for="muv">MUV</label>
+                        <input type="text" id="muv" name="muv" placeholder="Enter MUV Pricing" required>
+                    </div>
+                    <div class="vehicle">
+                        <label for="suv">SUV</label>
+                        <input type="text" id="suv" name="suv" placeholder="Enter SUV Pricing" required>
+                    </div>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('route-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Collect form data
+            const route = document.getElementById('route-name').value;
+            const pricing = {
+                HATCHBACK: document.getElementById('hatchback').value,
+                SEDAN: document.getElementById('sedan').value,
+                MUV: document.getElementById('muv').value,
+                SUV: document.getElementById('suv').value
+            };
+
+            // Prepare data to send
+            const data = { route, pricing };
+
+            console.log(data);
+
+            try {
+                // Send POST request to backend API
+                const response = await fetch('http://localhost:8001/addPrice', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert('Route and pricing added successfully!');
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                alert('Error adding price entry: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

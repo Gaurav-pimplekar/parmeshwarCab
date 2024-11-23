@@ -1,0 +1,308 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling for main page */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Admin Panel Page Styling */
+.admin-panel-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Header styling - Apply yellow background to header */
+header {
+    background-color: #ffeb3b; /* Yellow background for header */
+    padding: 20px 0;  /* Add some padding for better look */
+    text-align: center;
+}
+
+header h1 {
+    color: #333;
+    font-size: 32px;
+    margin: 0;
+}
+
+/* Title styling */
+.container h2 {
+    background-color: #ffeb3b; /* Yellow background for the title */
+    padding: 10px 20px;  /* Add padding for better look */
+    color: #333;    /* Dark text color for contrast */
+    border-radius: 5px; /* Optional: Add rounded corners to the title */
+    display: inline-block; /* Makes the background only cover the text */
+}
+
+/* Form Container Styling */
+.form-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Form and Input Field Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    width: 100%; /* Ensures inputs take up full width */
+}
+
+/* Ensure inputs are consistent in height */
+.form-group input {
+    height: 40px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    align-self: center; /* Center the submit button */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styling for Routes & Pricing */
+.route-table-container {
+    max-width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Center "Price" Header and Sub-Columns */
+table th:nth-child(2),
+table th:nth-child(3),
+table th:nth-child(4),
+table th:nth-child(5) {
+    text-align: center; /* Centering the Price and sub-columns (Hatchback, Sedan, MUV, SUV) */
+}
+
+table td {
+    text-align: center; /* Center text in all table data cells */
+}
+
+table td button.action-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+table td button.action-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the delete button */
+table td button.delete-btn {
+    background-color: #dc3545; /* Red color */
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+table td button.delete-btn:hover {
+    background-color: #c82333; /* Darker red for hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+    .container, .admin-panel-container, .form-container {
+        width: 95%; /* Make containers take more width on tablets */
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px 25px;
+    }
+
+    table th, table td {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container, .admin-panel-container, .form-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 25px;
+    }
+
+    table th, table td {
+        padding: 10px 8px;
+    }
+
+    /* Making table responsive for small screens */
+    table {
+        font-size: 14px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    table th, table td {
+        text-align: center;
+        padding: 8px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 8px 5px;
+    }
+
+    /* Button resizing for mobile view */
+    button[type="submit"] {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}

@@ -49,7 +49,14 @@ router.post("/addData", async (req, res) => {
         const data = obj.routes;
 
         for (let j of data) {
-            await Price.create(j);
+
+            const route = await Price.findOne({route: j.route});
+
+            if(!route){
+                await Price.create(j);
+            }
+
+            
         }
 
         res.send("data added successfully");
@@ -82,8 +89,9 @@ router.post('/addPrice', async (req, res) => {
         // Save to database
         await newPrice.save();
 
-        res.status(201).json({
+        res.status(200).json({
             message: 'Price entry added successfully',
+            success: true,
             data: newPrice,
         });
     } catch (error) {
@@ -118,12 +126,12 @@ router.put('/updatePrice/:route', async (req, res) => {
 });
 
 // 3. Delete price entry (DELETE)
-router.delete('/deletePrice/:route', async (req, res) => {
+router.delete('/deletePrice/:id', async (req, res) => {
     try {
-        const { route } = req.params;
+        const { id } = req.params;
 
         // Find and delete the price entry for the given route
-        const deletedPrice = await Price.findOneAndDelete({ route });
+        const deletedPrice = await Price.findByIdAndDelete(id);
 
         if (!deletedPrice) {
             return res.status(404).json({ message: 'Route not found' });

@@ -27,6 +27,14 @@ const tripSchema = new mongoose.Schema({
     },
     price:{
         type:String
+    },
+    returnDate: {
+        type: Date, // Date type is used for date (can store full date and time if required)
+        
+    },
+    returnTime:{
+        type: String, // Time can be stored as a string, or if you need more precision, you can use Date or Number (milliseconds)
+        
     }
 }, { timestamps: true }); // Adds createdAt and updatedAt fields automatically
 

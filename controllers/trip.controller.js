@@ -7,6 +7,8 @@ export const createTrip = async (req, res) => {
     try {
         // Destructure the trip details from the request body
         const { tripType, passengers, route, date, time } = req.body;
+        const data = req.body;
+
 
         // Validate the input fields
         if (!tripType || !passengers || !route || !date || !time) {
@@ -22,6 +24,8 @@ export const createTrip = async (req, res) => {
             route,
             date,
             time,
+            returnDate: data?.returnDate || date,
+            returnTime: data?.returnTime || time,
         });
 
         // Respond with success message and the created trip

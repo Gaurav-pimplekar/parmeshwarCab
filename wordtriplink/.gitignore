@@ -1,0 +1,15 @@
+.bash_history
+.bashrc
+.cache/
+.config/
+.gnupg/
+.index.html.swp
+.lesshst
+.local/
+.m2/
+.mysql_history
+.npm/
+.pm2/
+.profile
+.ssh/
+.viminfo
